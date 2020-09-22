@@ -14,7 +14,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build:client": "react-scripts build",
+    "build": "yarn build:client && yarn build:lambda",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start:lambda": "netlify-lambda serve ./.functions --config ./config/webpack.lambda.config.js",
