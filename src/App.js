@@ -8,6 +8,7 @@ function App() {
   const [images, setImages] = useState([]);
   const handleUserSearch = useCallback(user => {
     if (user) {
+      setImages([]);
       api.userReceivedPosts(user).then(setImages)
     }
   }, [setImages]);
