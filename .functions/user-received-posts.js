@@ -8,5 +8,11 @@ exports.handler = function (event, context, callback) {
       statusCode: 200,
       body: JSON.stringify(images),
     })
-  );
+  ).catch(e => {
+    callback(null, {
+      headers,
+      statusCode: 404,
+    })
+
+  });
 };

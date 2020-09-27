@@ -8,12 +8,13 @@ const postsFromUrl = (url, from = true) => {
     .then((response) => response.text())
     .then((response) => {
       return imageDataFromResponse(response, from);
-    });
+    })
 };
 
 const firstPageDataFromUrl = (url, from = true) => {
   return fetch(url)
-    .then((response) => response.text())
+    .then(
+      (response) => response.text())
     .then((response) => {
       return {
         firstPosts: imageDataFromResponse(response, from),

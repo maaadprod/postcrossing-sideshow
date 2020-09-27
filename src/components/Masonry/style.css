@@ -1,0 +1,12 @@
+.container {
+  position: relative;
+}
+
+.image-container {
+  transition: 0.1s ease-in all;
+}
+
+.image {
+  max-width: 100%;
+  vertical-align: middle;
+}
