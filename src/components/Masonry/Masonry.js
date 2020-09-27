@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
 import MasonryItem from './MasonryItem';
 
@@ -23,7 +23,7 @@ function Masonry(props) {
   useEffect(() => {
     let columnHeights = new Array(col).fill(0);
     const widthRatio = 100 / col;
-    const masonry = Object.keys(clientRect).reduce((obj, keyIndex) => {
+    const newMasonry = Object.keys(clientRect).reduce((obj, keyIndex) => {
       const height = clientRect[keyIndex];
       const minIndex = columnHeights.indexOf(Math.min(...columnHeights));
       const top = columnHeights[minIndex];
@@ -37,9 +37,9 @@ function Masonry(props) {
         },
       };
     }, {});
-    const heightContainer = Math.max(...columnHeights);
-    setHeight(heightContainer);
-    setMasonry(masonry);
+    const newHeightContainer = Math.max(...columnHeights);
+    setHeight(newHeightContainer);
+    setMasonry(newMasonry);
   }, [clientRect, col]);
 
   const renderItem = (item, index) => {

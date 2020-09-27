@@ -1,4 +1,4 @@
-import React, { memo, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 function MasonryItem({ uri, containerStyle, onLoadEnd, column }) {
   const onLoadEndRef = useRef(onLoadEnd);

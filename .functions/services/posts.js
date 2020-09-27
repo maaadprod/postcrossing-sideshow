@@ -36,9 +36,9 @@ const postsFromRange = (maxPage, url, from = true) => {
 const posts = (url, from = true) =>
   firstPageDataFromUrl(url, from).then(({ firstPosts, maxPage }) =>
     maxPage > 1
-      ? postsFromRange(maxPage, url, from).then((posts) => [
+      ? postsFromRange(maxPage, url, from).then((newPosts) => [
           ...firstPosts,
-          ...posts,
+          ...newPosts,
         ])
       : firstPosts
   );
